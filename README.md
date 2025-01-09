@@ -87,3 +87,23 @@ Setelah aplikasi berjalan di lokal Anda, Anda dapat mengaksesnya melalui browser
 ### Rute Pengguna
 * /dashboard: Halaman dashboard pengguna setelah login.
 * /admin/articles: Halaman admin untuk membuat, mengedit, dan mengelola artikel.
+
+
+### Login
+![Login](public/login.png)
+
+
+### Dashboard
+![Dashboard](public/dashboard.png)
+
+### List Article
+![Article List](public/article-index.png)
+
+### Form Add Article
+![Article](public/form-add-article.png)
+
+### Form Edit Article
+![Article](public/form-edit-article.png)
+
+### Delete Article
+![Article](public/delete-article.png)
