@@ -1,66 +1,89 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Articles Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Proyek ini adalah aplikasi manajemen artikel yang dibangun menggunakan Laravel. Aplikasi ini memungkinkan pengguna untuk membuat, mengedit, menghapus, dan mengelola artikel dengan mudah.
 
-## About Laravel
+## Fitur
+- **Autentikasi Pengguna**: Pengguna dapat mendaftar dan login untuk mengakses artikel.
+- **CRUD Artikel**: Pengguna dapat membuat, membaca, mengedit, dan menghapus artikel.
+- **Manajemen Meta Tags dan Tags**: Setiap artikel dapat memiliki meta tags dan tags untuk mempermudah pencarian.
+- **Upload Gambar**: Pengguna dapat mengunggah gambar untuk artikel mereka.
+- **Dashboard Admin**: Admin dapat mengelola artikel melalui dashboard admin yang mudah digunakan.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Persyaratan Sistem
+Pastikan sistem Anda memenuhi persyaratan berikut sebelum melanjutkan instalasi:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- PHP 8.x atau lebih tinggi
+- Composer
+- Node.js dan npm (untuk pengelolaan frontend)
+- Database MySQL
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Instalasi
 
-## Learning Laravel
+### 1. Clone Repository
+Clone proyek ini ke komputer Anda dengan perintah:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```bash
+git clone https://github.com/amirrdn/articles-laravel.git
+cd articles-laravel
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 2. Install Dependensi PHP
+Setelah meng-clone proyek, install dependensi PHP menggunakan Composer:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+composer install
+```
 
-## Laravel Sponsors
+### 3. Install Dependensi Frontend
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+npm install
+```
+### 4. Konfigurasi File .env
 
-### Premium Partners
+```bash
+cp .env.example .env
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 5. Generate Application Key
+Jalankan perintah berikut untuk menghasilkan application key yang diperlukan oleh Laravel:
 
-## Contributing
+```bash
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 6. Jalankan Migrasi Database
+Setelah file .env dikonfigurasi, jalankan migrasi untuk membuat tabel yang diperlukan oleh aplikasi:
 
-## Code of Conduct
+```bash
+php artisan migrate
+```
+### 7. Jalankan Seeder
+```bash
+php artisan db:seed
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 8. Jalankan Aplikasi
+Sekarang, jalankan aplikasi menggunakan perintah berikut:
 
-## Security Vulnerabilities
+```bash
+php artisan serve
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 9. (Opsional) Menjalankan Task Frontend
+Untuk meng-compile asset frontend, jalankan perintah berikut:
 
-## License
+```bash
+npm run dev
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 10. Pengguna dan Admin
+Admin dapat mengelola artikel, melihat artikel yang diposting, serta memoderasi konten.
+Pengguna biasa dapat melihat artikel dan memposting artikel mereka.
+
+### Penggunaan
+Setelah aplikasi berjalan di lokal Anda, Anda dapat mengaksesnya melalui browser menggunakan http://localhost:8000. Jika Anda ingin mengelola artikel, pastikan Anda telah login dengan akun admin.
+
+### Rute Pengguna
+* /dashboard: Halaman dashboard pengguna setelah login.
+* /admin/articles: Halaman admin untuk membuat, mengedit, dan mengelola artikel.
