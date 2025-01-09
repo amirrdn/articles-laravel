@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <x-slot name="header">Artikel</x-slot>
-
+                
                 <button id="open-add-modal-button" class="bg-green-500 text-white px-4 py-2 mb-4 rounded hover:bg-green-600 transition">Tambah Artikel</button>
 
                 <table id="article-table" class="min-w-full table-auto text-sm text-left text-gray-500">

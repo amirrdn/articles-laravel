@@ -41,8 +41,13 @@ class ArticleController extends Controller
                     return '-';
                 })
                 ->addColumn('actions', function($article) {
-                    return '<button onclick="editArticle(' . $article->id . ')" class="bg-green-500 text-white px-4 py-2 mb-4 rounded hover:bg-green-600 transition">Edit</button>
-                            <button onclick="deleteArticle(' . $article->id . ')" class="bg-red-500 text-white px-4 py-2 mb-4 rounded hover:bg-red-600 transition">Delete</button>';
+                    return '
+    <button onclick="editArticle(' . $article->id . ')" class="bg-green-500 text-white px-4 py-2 mb-4 rounded hover:bg-green-600 transition">
+        Edit
+    </button>
+    <button onclick="deleteArticle(' . $article->id . ')" class="bg-red-500 text-white px-4 py-2 mb-4 rounded hover:bg-red-500 transition">
+        Delete
+    </button>';
                 })
                 ->rawColumns(['image', 'actions', 'start_date', 'enddate'])
                 ->make(true);
